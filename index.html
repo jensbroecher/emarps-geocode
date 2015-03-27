@@ -33,7 +33,7 @@ parsePlugin.initialize('len2LWLxsk86rc83UuSoeeP3uGIJ9tU89o49cGIt','b6ut6CMfUVZWG
 
 }, function(e) {
     alert('error');
-});	
+});
 }
 
 function lpush() {
@@ -44,12 +44,6 @@ window.plugin.notification.local.add({
     autoCancel: true,
     ongoing:    false
 });
-}
-
-function dothisonload(){
-	
-navigator.geolocation.getCurrentPosition(disp);
-
 }
 
 $.ajaxSetup({
@@ -65,14 +59,23 @@ $.ajaxSetup({
 
 $( document ).ready(function() {
 
+navigator.geolocation.getCurrentPosition(disp);
+
+setInterval(function(){ 
 function disp(pos) {
    $('.lat-view').html(pos.coords.latitude);
    $('.long-view').html(pos.coords.longitude);
 }
+ }, 3000);
+
+setInterval(function(){ alert(""+pos.coords.latitude+" "+pos.coords.longitude+""); }, 6000);
 
 });
 
 </script>
+
+<div class=".lat-view">Lat</div>
+<div class=".long-view">Long</div>
 
 </body>
 </html>
