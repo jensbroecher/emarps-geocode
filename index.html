@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
+<link href="main.css" rel="stylesheet" type="text/css">
+<link href="animate.min.css" rel="stylesheet" type="text/css">
+
+<script src="jquery.min.js"></script>
+
+<script type="text/javascript" src="cordova.js"></script>
+
+<script type="text/javascript" src="cdv-plugin-parse.js"></script>
+
+<script>
+
+function onDeviceReady() {
+parsePlugin.initialize('len2LWLxsk86rc83UuSoeeP3uGIJ9tU89o49cGIt','b6ut6CMfUVZWGKkyxe341gq0xe7eR9OK79ZJak7Z', function() {
+
+    parsePlugin.subscribe('emarpsgeocode', function() {
+
+        parsePlugin.getInstallationId(function(id) {
+
+        }, function(e) {
+            alert('error');
+        });
+
+    }, function(e) {
+        alert('error');
+    });
+
+}, function(e) {
+    alert('error');
+});	
+}
+
+function lpush() {
+window.plugin.notification.local.add({
+    id:         1,
+    message:    '',
+    title:      'Welcome',
+    autoCancel: true,
+    ongoing:    false
+});
+}
+
+function dothisonload(){
+	
+navigator.geolocation.getCurrentPosition(disp);
+
+}
+
+$.ajaxSetup({
+    beforeSend:function(){
+        // show gif here, eg:
+        $("#loading").fadeIn();
+    },
+    complete:function(){
+        // hide gif here, eg:
+        $("#loading").fadeOut();
+    }
+});
+
+$( document ).ready(function() {
+
+function disp(pos) {
+   $('.lat-view').html(pos.coords.latitude);
+   $('.long-view').html(pos.coords.longitude);
+}
+
+});
+
+</script>
+
+</body>
+</html>
