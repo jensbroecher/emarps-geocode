@@ -29,6 +29,8 @@ button {
 	line-height: 250%;
 	margin-top: 5px;
 	margin-bottom: 5px;
+	margin-right: auto;
+	margin-left: auto;
 }
 #detailsfordb {
 	background-color: #FFF;

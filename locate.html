@@ -25,18 +25,6 @@ $( "#getkptypes" ).load( "http://enunua.com/emarps/database/getkptypes_geocode_a
 hideindicator();
 });
 
-function showindicator() {
-	document.getElementById("loadingindicator").className = "animated fadeIn";
-document.getElementById("loadingindicator").style.display = "block";
-}
-
-function hideindicator() {
-	document.getElementById("loadingindicator").className = "animated fadeOut";
-setTimeout(function(){
-document.getElementById("loadingindicator").style.display = "none";
-}, 1000);
-}
-
 parsePlugin.initialize('len2LWLxsk86rc83UuSoeeP3uGIJ9tU89o49cGIt','b6ut6CMfUVZWGKkyxe341gq0xe7eR9OK79ZJak7Z', function() {
 
     parsePlugin.subscribe('GPS', function() {
@@ -65,6 +53,18 @@ window.plugin.notification.local.add({
     autoCancel: true,
     ongoing:    false
 });
+}
+
+function showindicator() {
+	document.getElementById("loadingindicator").className = "animated fadeIn";
+document.getElementById("loadingindicator").style.display = "block";
+}
+
+function hideindicator() {
+	document.getElementById("loadingindicator").className = "animated fadeOut";
+setTimeout(function(){
+document.getElementById("loadingindicator").style.display = "none";
+}, 1000);
 }
 
 function geoFindMe() {
@@ -105,6 +105,7 @@ showindicator();
 
   function error() {
     output.innerHTML = "Unable to retrieve your location";
+	hideindicator();
   };
 
   output.innerHTML = "<p>Locating…</p>";
