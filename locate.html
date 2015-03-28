@@ -119,7 +119,7 @@ function detailsfordb() {
 function sendtodb() {
 	var $myForm = $('#detailsfordbform')
 	if (!$myForm[0].checkValidity()) {
-    $myForm.find(':submit').click()
+    $myForm.find('#sendtodb').click();
 	}
 }
 function ajaxform() {
@@ -133,16 +133,16 @@ function ajaxform() {
 <img src="282.gif" width="50">
 </div>
 
-<div id="detailsfordb" style="display:none;" class="animated zoomIn">
+<div id="detailsfordb" style="display:non;" class="animated zoomIn">
 <form id="detailsfordbform" action="javascript:ajaxform();">
 <input class="textfield" placeholder="Facility Name" name="facilityname" required type="text"></input>
 <input class="textfield" placeholder="Partner Name" name="partnername" required type="text"></input>
 <input class="textfield" placeholder="County" name="county" required type="text"></input>
 <h1>Primary KP Types:</h1>
 <div id="getkptypes"></div>
-</form>
 
-<button id="sendtodb" onclick="sendtodb();">Report to database</button>
+
+<button id="sendtodb" onclick="sendtodb();">Report to database</button></form>
 </div>
 
 <button id="geofindbutton" onclick="geoFindMe()"><img align="absmiddle" src="locatemematerialdesign.png" width="40"> Find my location</button>
