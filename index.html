@@ -9,17 +9,16 @@
 <link href="animate.min.css" rel="stylesheet" type="text/css">
 
 <script src="jquery.min.js"></script>
-
 <script type="text/javascript" src="cordova.js"></script>
-
 <script type="text/javascript" src="cdv-plugin-parse.js"></script>
 
+<div id="map">
 <script>
 
 function onDeviceReady() {
 parsePlugin.initialize('len2LWLxsk86rc83UuSoeeP3uGIJ9tU89o49cGIt','b6ut6CMfUVZWGKkyxe341gq0xe7eR9OK79ZJak7Z', function() {
 
-    parsePlugin.subscribe('emarpsgeocode', function() {
+    parsePlugin.subscribe('GPS', function() {
 
         parsePlugin.getInstallationId(function(id) {
 
@@ -90,8 +89,10 @@ function geoFindMe() {
 }
 
 </script>
+</div>
 
-<p><button onclick="geoFindMe()">Show my location</button></p>
+  <button onclick="geoFindMe()"><img align="absmiddle" src="locatemematerialdesign.png" width="40"> Find my location</button>
+<br>
 <div id="out"></div>
 
 </body>
