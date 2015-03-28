@@ -5,7 +5,7 @@ body {
 	color: #000;
 	background-color: #D6D6D6;
 }
-#map img {
+.map {
 	width: 100%;
 }
 button {
@@ -13,13 +13,6 @@ button {
 	background-color: #FFF;
 	text-align: center;
 	width: 100%;
-	border-top-width: 0px;
-	border-right-width: 0px;
-	border-bottom-width: 0px;
-	border-left-width: 0px;
-	border-top-style: none;
-	border-right-style: none;
-	border-bottom-style: none;
-	border-left-style: none;
 	display: block;
+	border: 2px solid #4285F4;
 }

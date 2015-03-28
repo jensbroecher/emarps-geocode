@@ -12,7 +12,6 @@
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="cdv-plugin-parse.js"></script>
 
-<div id="map">
 <script>
 
 function onDeviceReady() {
@@ -75,8 +74,11 @@ function geoFindMe() {
 
     var img = new Image();
     img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=400x400&sensor=false";
+	img.className = "animated zoomIn map";
 
     output.appendChild(img);
+	
+	
   };
 
   function error() {
@@ -89,10 +91,8 @@ function geoFindMe() {
 }
 
 </script>
-</div>
 
   <button onclick="geoFindMe()"><img align="absmiddle" src="locatemematerialdesign.png" width="40"> Find my location</button>
-<br>
 <div id="out"></div>
 
 </body>
