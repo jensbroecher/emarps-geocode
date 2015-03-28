@@ -14,9 +14,13 @@
 
 <script>
 
-function onDeviceReady() {
+function onDeviceReady() {}
+
+$( document ).ready(function() {
+
+alert('App loaded');
 	
-$( "#getkytypes" ).load( "http://enunua.com/emarps/database/getkptypes_geocode_app.php", function() {
+$( "#getkptypes" ).load( "http://enunua.com/emarps/database/getkptypes_geocode_app.php", function() {
   alert( "KP Types loaded" );
 });
 
@@ -37,7 +41,8 @@ parsePlugin.initialize('len2LWLxsk86rc83UuSoeeP3uGIJ9tU89o49cGIt','b6ut6CMfUVZWG
 }, function(e) {
     alert('error');
 });
-}
+
+});
 
 function lpush() {
 window.plugin.notification.local.add({
@@ -101,7 +106,7 @@ function geoFindMe() {
 <input placeholder="Facility Name" name="facilityname" required type="text"></input>
 <input placeholder="Partner Name" name="partnername" required type="text"></input>
 <input placeholder="County" name="county" required type="text"></input>
-<div id="getpytypes"></div>
+<div id="getkptypes"></div>
 </div>
 
 <button onclick="geoFindMe()"><img align="absmiddle" src="locatemematerialdesign.png" width="40"> Find my location</button>
