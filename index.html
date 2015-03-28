@@ -18,10 +18,14 @@ function onDeviceReady() {}
 
 $( document ).ready(function() {
 
-alert('App loaded');
+// alert('App loaded');
 	
 $( "#getkptypes" ).load( "http://enunua.com/emarps/database/getkptypes_geocode_app.php", function() {
-  alert( "KP Types loaded" );
+//  alert( "KP Types loaded" );
+document.getElementById("loadingindicator").className = "animated fadeOut";
+setTimeout(function(){
+document.getElementById("loadingindicator").style.display = "none";
+}, 1000);
 });
 
 parsePlugin.initialize('len2LWLxsk86rc83UuSoeeP3uGIJ9tU89o49cGIt','b6ut6CMfUVZWGKkyxe341gq0xe7eR9OK79ZJak7Z', function() {
@@ -109,6 +113,10 @@ function detailsfordb() {
 }
 
 </script>
+
+<div id="loadingindicator">
+<img src="282.gif" width="50">
+</div>
 
 <div id="detailsfordb" style="display:none;" class="animated zoomIn">
 <input placeholder="Facility Name" name="facilityname" required type="text"></input>
