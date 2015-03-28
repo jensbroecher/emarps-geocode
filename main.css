@@ -4,9 +4,10 @@ body {
 	font-size: 18px;
 	color: #000;
 	background-color: #E1F2FF;
+	text-align: center;
 }
 .map {
-	width: 100%;
+	width: 90%;
 	border: 5px solid #FFF;
 	box-shadow: 0 0 25px 1px rgba(0,0,0,0.3);
 }
@@ -22,6 +23,8 @@ button {
     transition: all 0.5s;
 }
 button:active {
-  -webkit-transform: scale3d(0.9, 0.9, 1);
   transition: all 0.5s;
+}
+button:focus {
+    outline: none;
 }
