@@ -123,7 +123,18 @@ function sendtodb() {
 	}
 }
 function ajaxform() {
-	alert('Data sent to server');
+	var facilityname = document.getElementById('facilityname').value;
+	var partnername = document.getElementById('partnername').value;
+	var county = document.getElementById('county').value;
+	var kptypecheckbox1 = document.getElementById('kptypecheckbox1').value;
+	var kptypecheckbox2 = document.getElementById('kptypecheckbox2').value;
+	var kptypecheckbox3 = document.getElementById('kptypecheckbox3').value;
+	var kptypecheckbox4 = document.getElementById('kptypecheckbox4').value;
+	var kptypecheckbox5 = document.getElementById('kptypecheckbox5').value;
+	var kptypecheckbox6 = document.getElementById('kptypecheckbox6').value;
+	var kptypecheckbox7 = document.getElementById('kptypecheckbox7').value;
+	var kptypecheckbox8 = document.getElementById('kptypecheckbox8').value;
+	alert('Data sent:\n\n\nFacility Name: '+facilityname+'\nPartner Name: '+partnername+'\nCounty: '+county+'\nPrimary KP Types: '+kptypecheckbox1+' '+kptypecheckbox2+' '+kptypecheckbox3+' '+kptypecheckbox4+' '+kptypecheckbox5+' '+kptypecheckbox6+' '+kptypecheckbox7+' '+kptypecheckbox8+'');
 	lpush();
 }
 
@@ -133,11 +144,11 @@ function ajaxform() {
 <img src="282.gif" width="50">
 </div>
 
-<div id="detailsfordb" style="display:non;" class="animated zoomIn">
+<div id="detailsfordb" style="display:none;" class="animated zoomIn">
 <form id="detailsfordbform" action="javascript:ajaxform();">
-<input class="textfield" placeholder="Facility Name" name="facilityname" required type="text"></input>
-<input class="textfield" placeholder="Partner Name" name="partnername" required type="text"></input>
-<input class="textfield" placeholder="County" name="county" required type="text"></input>
+<input class="textfield" id="facilityname" placeholder="Facility Name" name="facilityname" required type="text"></input>
+<input class="textfield" id="partnername" placeholder="Partner Name" name="partnername" required type="text"></input>
+<input class="textfield" id="county" placeholder="County" name="county" required type="text"></input>
 <h1>Primary KP Types:</h1>
 <div id="getkptypes"></div>
 
