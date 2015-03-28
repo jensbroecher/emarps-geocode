@@ -126,15 +126,14 @@ function ajaxform() {
 	var facilityname = document.getElementById('facilityname').value;
 	var partnername = document.getElementById('partnername').value;
 	var county = document.getElementById('county').value;
-	var kptypecheckbox1 = document.getElementById('kptypecheckbox1').value;
-	var kptypecheckbox2 = document.getElementById('kptypecheckbox2').value;
-	var kptypecheckbox3 = document.getElementById('kptypecheckbox3').value;
-	var kptypecheckbox4 = document.getElementById('kptypecheckbox4').value;
-	var kptypecheckbox5 = document.getElementById('kptypecheckbox5').value;
-	var kptypecheckbox6 = document.getElementById('kptypecheckbox6').value;
-	var kptypecheckbox7 = document.getElementById('kptypecheckbox7').value;
-	var kptypecheckbox8 = document.getElementById('kptypecheckbox8').value;
-	alert('Data sent:\n\n\nFacility Name: '+facilityname+'\nPartner Name: '+partnername+'\nCounty: '+county+'\nPrimary KP Types: '+kptypecheckbox1+' '+kptypecheckbox2+' '+kptypecheckbox3+' '+kptypecheckbox4+' '+kptypecheckbox5+' '+kptypecheckbox6+' '+kptypecheckbox7+' '+kptypecheckbox8+'');
+	var kptypecheckbox1 = document.getElementById('kptypecheckbox1').checked;
+	var kptypecheckbox2 = document.getElementById('kptypecheckbox2').checked;
+	var kptypecheckbox3 = document.getElementById('kptypecheckbox3').checked;
+	var kptypecheckbox4 = document.getElementById('kptypecheckbox4').checked;
+	var kptypecheckbox5 = document.getElementById('kptypecheckbox5').checked;
+	var kptypecheckbox7 = document.getElementById('kptypecheckbox7').checked;
+	var kptypecheckbox8 = document.getElementById('kptypecheckbox8').checked;
+	alert('Data sent:\n\nFacility Name: '+facilityname+'\nPartner Name: '+partnername+'\nCounty: '+county+'\nPrimary KP Types:\n\nFFW: '+kptypecheckbox1+'\nTruckers: '+kptypecheckbox2+'\nMSM: '+kptypecheckbox3+'\nPWUD: '+kptypecheckbox4+'\nFF: '+kptypecheckbox5+'\nFFX: '+kptypecheckbox7+'\nPWID: '+kptypecheckbox8+'');
 	lpush();
 }
 
