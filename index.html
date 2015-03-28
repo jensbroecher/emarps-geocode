@@ -84,9 +84,13 @@ function geoFindMe() {
 
     var img = new Image();
     img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=400x400&sensor=false";
-	img.className = "animated fadeIn map";
+	img.className = "map";
 
     output.appendChild(img);
+	
+	document.getElementById('geofindbutton').style.display = "none";
+	document.getElementById('detailsfordbbutton').style.display = "block";
+	document.getElementById('locateagainbutton').style.display = "block";
 	
 	
   };
@@ -100,16 +104,25 @@ function geoFindMe() {
   navigator.geolocation.getCurrentPosition(success, error);
 }
 
+function detailsfordb() {
+	document.getElementById('detailsfordb').style.display = "block";
+}
+
 </script>
 
-<div id="detailsfordb">
+<div id="detailsfordb" style="display:none;" class="animated zoomIn">
 <input placeholder="Facility Name" name="facilityname" required type="text"></input>
 <input placeholder="Partner Name" name="partnername" required type="text"></input>
 <input placeholder="County" name="county" required type="text"></input>
 <div id="getkptypes"></div>
 </div>
 
-<button onclick="geoFindMe()"><img align="absmiddle" src="locatemematerialdesign.png" width="40"> Find my location</button>
+<button id="geofindbutton" onclick="geoFindMe()"><img align="absmiddle" src="locatemematerialdesign.png" width="40"> Find my location</button>
+
+<button id="detailsfordbbutton" onclick="detailsfordb();"></button>
+
+<button id="locateagainbutton" onclick="document.location.reload();"></button>
+
 <div id="out"></div>
 
 </body>

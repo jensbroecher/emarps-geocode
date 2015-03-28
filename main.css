@@ -22,6 +22,21 @@ button {
 	-webkit-tap-highlight-color: transparent;
     transition: all 0.5s;
 }
+#detailsfordb {
+	background-color: #FFF;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+#detailsfordb input {
+	padding: 5px;
+	border: 1px solid #999;
+	width: 90%;
+	margin-top: 10px;
+}
+
 button:active {
   transition: all 0.5s;
 }
