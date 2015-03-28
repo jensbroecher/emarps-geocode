@@ -42,8 +42,8 @@ button {
 	padding-left: 2%;
 	padding-right: 2%;
 	text-align: left;
-	font-size: 13px;
-	line-height: 150%;
+	font-size: 16px;
+	line-height: 200%;
 	color: #666;
 }
 h1 {
@@ -52,6 +52,7 @@ h1 {
 	text-align: center;
 	padding-top: 5px;
 	padding-bottom: 5px;
+	font-size: 16px;
 }
 
 .textfield {
