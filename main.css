@@ -41,7 +41,7 @@ button {
 	padding-right: 2px;
 	text-align: left;
 }
-#detailsfordb input {
+.textfield {
 	border: 1px solid #999;
 	width: 90%;
 	margin-top: 10px;
