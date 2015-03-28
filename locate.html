@@ -22,11 +22,20 @@ $( document ).ready(function() {
 	
 $( "#getkptypes" ).load( "http://enunua.com/emarps/database/getkptypes_geocode_app.php", function() {
 //  alert( "KP Types loaded" );
-document.getElementById("loadingindicator").className = "animated fadeOut";
+hideindicator();
+});
+
+function showindicator() {
+	document.getElementById("loadingindicator").className = "animated fadeIn";
+document.getElementById("loadingindicator").style.display = "block";
+}
+
+function hideindicator() {
+	document.getElementById("loadingindicator").className = "animated fadeOut";
 setTimeout(function(){
 document.getElementById("loadingindicator").style.display = "none";
 }, 1000);
-});
+}
 
 parsePlugin.initialize('len2LWLxsk86rc83UuSoeeP3uGIJ9tU89o49cGIt','b6ut6CMfUVZWGKkyxe341gq0xe7eR9OK79ZJak7Z', function() {
 
@@ -58,28 +67,23 @@ window.plugin.notification.local.add({
 });
 }
 
-$.ajaxSetup({
-    beforeSend:function(){
-        // show gif here, eg:
-        $("#loading").fadeIn();
-    },
-    complete:function(){
-        // hide gif here, eg:
-        $("#loading").fadeOut();
-    }
-});
-
 function geoFindMe() {
+
+showindicator();
+	
   var output = document.getElementById("out");
 
   if (!navigator.geolocation){
     output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
+	hideindicator();
     return;
   }
 
   function success(position) {
     var latitude  = position.coords.latitude;
     var longitude = position.coords.longitude;
+	
+	hideindicator();
 
     output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
 	
