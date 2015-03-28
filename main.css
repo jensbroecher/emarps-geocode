@@ -40,17 +40,27 @@ button {
 	left: 0px;
 	top: 0px;
 	padding-left: 2%;
-	padding-right: 2px;
+	padding-right: 2%;
 	text-align: left;
+	font-size: 13px;
+	line-height: 150%;
+	color: #666;
 }
+h1 {
+	color: #FFF;
+	background-color: #0070C0;
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
 .textfield {
 	border: 1px solid #999;
-	width: 90%;
+	width: 100%;
 	margin-top: 10px;
 	font-size: 14px;
 	line-height: 200%;
-	padding-right: 5px;
-	padding-left: 5px;
+	text-indent: 5px;
 }
 .bigcheck {
 	width: auto;
