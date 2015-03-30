@@ -146,7 +146,7 @@ function ajaxform() {
 	
 localStorage.setItem('facilityname', facilityname);
 	
-$.get('http://enunua.com/emarps/database/emarps_geodata_app_storedb.php?facilityname='+facilityname+'&partnername'+partnername+'&county='+county+'&lat='+lat+'&long='+long+'&kptypecheckbox1='+kptypecheckbox1+'&kptypecheckbox2='+kptypecheckbox2+'&kptypecheckbox3='+kptypecheckbox3+'&kptypecheckbox4='+kptypecheckbox4+'&kptypecheckbox5='+kptypecheckbox5+'&kptypecheckbox7='+kptypecheckbox7+'&kptypecheckbox8='+kptypecheckbox8+'', function(data) {
+$.get('http://enunua.com/emarps/database/emarps_geodata_app_storedb.php?facilityname='+facilityname+'&partnername='+partnername+'&county='+county+'&lat='+lat+'&long='+long+'&kptypecheckbox1='+kptypecheckbox1+'&kptypecheckbox2='+kptypecheckbox2+'&kptypecheckbox3='+kptypecheckbox3+'&kptypecheckbox4='+kptypecheckbox4+'&kptypecheckbox5='+kptypecheckbox5+'&kptypecheckbox7='+kptypecheckbox7+'&kptypecheckbox8='+kptypecheckbox8+'', function(data) {
   	lpush();
 });
 
@@ -157,11 +157,12 @@ $.get('http://enunua.com/emarps/database/emarps_geodata_app_storedb.php?facility
 </script>
 
 <div id="loadingindicator">
-<img src="282.gif" width="50">
+<img src="282.gif" width="120">
 </div>
 
 <div id="detailsfordb" style="display:none;" class="animated zoomIn">
 <form id="detailsfordbform" action="javascript:ajaxform();">
+<h1>Clinic Details:</h1>
 <input class="textfield" id="facilityname" placeholder="Facility Name" name="facilityname" required type="text"></input>
 <input class="textfield" id="partnername" placeholder="Partner Name" name="partnername" required type="text"></input>
 <input class="textfield" id="county" placeholder="County" name="county" required type="text"></input>
@@ -169,6 +170,9 @@ $.get('http://enunua.com/emarps/database/emarps_geodata_app_storedb.php?facility
 <div id="getkptypes"></div>
 
 <button id="sendtodb" style="margin-top:10px;" onclick="sendtodb();">Report to database</button></form>
+
+<button id="locateagainbutton" onclick="document.location.reload();">Locate again</button>
+<br>
 </div>
 
 <div id="geofind">
