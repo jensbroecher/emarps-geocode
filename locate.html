@@ -46,10 +46,12 @@ parsePlugin.initialize('len2LWLxsk86rc83UuSoeeP3uGIJ9tU89o49cGIt','b6ut6CMfUVZWG
 });
 
 function lpush() {
+var facilityname = localStorage.setItem('facilityname', facilityname);
+	
 window.plugin.notification.local.add({
     id:         1,
-    message:    'The location of this facility has been sent to the database',
-    title:      'Location reported',
+    message:    ''+facilityname+' has been reported',
+    title:      ''+facilityname+' location reported',
     autoCancel: true,
     ongoing:    false
 });
