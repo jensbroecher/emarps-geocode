@@ -46,12 +46,12 @@ parsePlugin.initialize('len2LWLxsk86rc83UuSoeeP3uGIJ9tU89o49cGIt','b6ut6CMfUVZWG
 });
 
 function lpush() {
-var facilityname = localStorage.setItem('facilityname', facilityname);
+var facilityname = localStorage.getItem('facilityname');
 	
 window.plugin.notification.local.add({
     id:         1,
     message:    ''+facilityname+' has been reported',
-    title:      ''+facilityname+' location reported',
+    title:      'Thank you!',
     autoCancel: true,
     ongoing:    false
 });
@@ -84,6 +84,9 @@ showindicator();
   function success(position) {
     var latitude  = position.coords.latitude;
     var longitude = position.coords.longitude;
+	
+	localStorage.setItem('latitude', latitude);
+	localStorage.setItem('longitude', longitude);
 	
 	hideindicator();
 
@@ -126,6 +129,9 @@ function sendtodb() {
 	}
 }
 function ajaxform() {
+	var lat = localStorage.getItem('latitude');
+	var long = localStorage.getItem('longitude');
+	var facilityname = localStorage.getItem('facilityname');
 	var facilityname = document.getElementById('facilityname').value;
 	var partnername = document.getElementById('partnername').value;
 	var county = document.getElementById('county').value;
@@ -136,11 +142,11 @@ function ajaxform() {
 	var kptypecheckbox5 = document.getElementById('kptypecheckbox5').checked;
 	var kptypecheckbox7 = document.getElementById('kptypecheckbox7').checked;
 	var kptypecheckbox8 = document.getElementById('kptypecheckbox8').checked;
-	alert('Data sent:\n\nFacility Name: '+facilityname+'\nPartner Name: '+partnername+'\nCounty: '+county+'\n\nPrimary KP Types:\n\nFFW: '+kptypecheckbox1+'\nTruckers: '+kptypecheckbox2+'\nMSM: '+kptypecheckbox3+'\nPWUD: '+kptypecheckbox4+'\nFF: '+kptypecheckbox5+'\nFFX: '+kptypecheckbox7+'\nPWID: '+kptypecheckbox8+'');
+	alert('Data sent:\n\nFacility Name: '+facilityname+'\nPartner Name: '+partnername+'\nCounty: '+county+'\nLatitude: '+lat+'\nLongitude: '+long+'\n\nPrimary KP Types:\n\nFFW: '+kptypecheckbox1+'\nTruckers: '+kptypecheckbox2+'\nMSM: '+kptypecheckbox3+'\nPWUD: '+kptypecheckbox4+'\nFF: '+kptypecheckbox5+'\nFFX: '+kptypecheckbox7+'\nPWID: '+kptypecheckbox8+'');
 	
 localStorage.setItem('facilityname', facilityname);
 	
-$.get('http://enunua.com/emarps/database/emarps_geodata_app_storedb.php?facilityname='+facilityname+'&partnername'+partnername+'&county='+county+'&kptypecheckbox1='+kptypecheckbox1+'&kptypecheckbox2='+kptypecheckbox2+'&kptypecheckbox3='+kptypecheckbox3+'&kptypecheckbox4='+kptypecheckbox4+'&kptypecheckbox5='+kptypecheckbox5+'&kptypecheckbox7='+kptypecheckbox7+'&kptypecheckbox8='+kptypecheckbox8+'', function(data) {
+$.get('http://enunua.com/emarps/database/emarps_geodata_app_storedb.php?facilityname='+facilityname+'&partnername'+partnername+'&county='+county+'&lat='+lat+'&long='+long+'&kptypecheckbox1='+kptypecheckbox1+'&kptypecheckbox2='+kptypecheckbox2+'&kptypecheckbox3='+kptypecheckbox3+'&kptypecheckbox4='+kptypecheckbox4+'&kptypecheckbox5='+kptypecheckbox5+'&kptypecheckbox7='+kptypecheckbox7+'&kptypecheckbox8='+kptypecheckbox8+'', function(data) {
   	lpush();
 });
 
