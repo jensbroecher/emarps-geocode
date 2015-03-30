@@ -133,9 +133,15 @@ function ajaxform() {
 	var kptypecheckbox5 = document.getElementById('kptypecheckbox5').checked;
 	var kptypecheckbox7 = document.getElementById('kptypecheckbox7').checked;
 	var kptypecheckbox8 = document.getElementById('kptypecheckbox8').checked;
-	alert('Data sent:\n\nFacility Name: '+facilityname+'\nPartner Name: '+partnername+'\nCounty: '+county+'\nPrimary KP Types:\n\nFFW: '+kptypecheckbox1+'\nTruckers: '+kptypecheckbox2+'\nMSM: '+kptypecheckbox3+'\nPWUD: '+kptypecheckbox4+'\nFF: '+kptypecheckbox5+'\nFFX: '+kptypecheckbox7+'\nPWID: '+kptypecheckbox8+'');
-	lpush();
+	alert('Data sent:\n\nFacility Name: '+facilityname+'\nPartner Name: '+partnername+'\nCounty: '+county+'\n\nPrimary KP Types:\nFFW: '+kptypecheckbox1+'\nTruckers: '+kptypecheckbox2+'\nMSM: '+kptypecheckbox3+'\nPWUD: '+kptypecheckbox4+'\nFF: '+kptypecheckbox5+'\nFFX: '+kptypecheckbox7+'\nPWID: '+kptypecheckbox8+'');
+	
+$.get('http://enunua.com/emarps/database/emarps_geodata_app_storedb.php?facilityname='+facilityname+'&partnername'+partnername+'&county='+county+'&kptypecheckbox1='+kptypecheckbox1+'&kptypecheckbox2='+kptypecheckbox2+'&kptypecheckbox3='+kptypecheckbox3+'&kptypecheckbox4='+kptypecheckbox4+'&kptypecheckbox5='+kptypecheckbox5+'&kptypecheckbox7='+kptypecheckbox7+'&kptypecheckbox8='+kptypecheckbox8+'', function(data) {
+  	lpush();
+});
+
 }
+
+
 
 </script>
 
