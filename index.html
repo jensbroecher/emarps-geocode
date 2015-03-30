@@ -4,13 +4,32 @@
 <meta charset="utf-8">
 <link href="main.css" rel="stylesheet" type="text/css">
 <link href="animate.min.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript">
+function showindicator() {
+	document.getElementById("loadingindicator").className = "animated fadeIn";
+document.getElementById("loadingindicator").style.display = "block";
+}
+
+function letsgo() {
+	showindicator();
+	setTimeout(function(){
+	document.location.href = 'locate.html';
+	}, 3000);
+}
+</script>
+
 </head>
+
+<div id="loadingindicator">
+<img src="282.gif" width="120">
+</div>
 
 <body>
 <div class="animated zoomIn">
 <p><img src="start.png" width="80%"></p>
 <p>Geodata Reporting</p>
-<button style="width:250px;" id="letsgo" onclick="document.location.href = 'locate.html';">Start</button>
+<button style="width:250px;" id="letsgo" onclick="letsgo();">Start</button>
 <div id="logos">
   <img src="logo_login.png" width="140"><br>
 <img src="header_logo.png" width="130">
