@@ -115,6 +115,7 @@ showindicator();
 
 function detailsfordb() {
 	document.getElementById('detailsfordb').style.display = "block";
+	document.getElementById('geofind').style.display = "none";
 }
 function sendtodb() {
 	var $myForm = $('#detailsfordbform')
@@ -133,7 +134,9 @@ function ajaxform() {
 	var kptypecheckbox5 = document.getElementById('kptypecheckbox5').checked;
 	var kptypecheckbox7 = document.getElementById('kptypecheckbox7').checked;
 	var kptypecheckbox8 = document.getElementById('kptypecheckbox8').checked;
-	alert('Data sent:\n\nFacility Name: '+facilityname+'\nPartner Name: '+partnername+'\nCounty: '+county+'\n\nPrimary KP Types:\nFFW: '+kptypecheckbox1+'\nTruckers: '+kptypecheckbox2+'\nMSM: '+kptypecheckbox3+'\nPWUD: '+kptypecheckbox4+'\nFF: '+kptypecheckbox5+'\nFFX: '+kptypecheckbox7+'\nPWID: '+kptypecheckbox8+'');
+	alert('Data sent:\n\nFacility Name: '+facilityname+'\nPartner Name: '+partnername+'\nCounty: '+county+'\n\nPrimary KP Types:\n\nFFW: '+kptypecheckbox1+'\nTruckers: '+kptypecheckbox2+'\nMSM: '+kptypecheckbox3+'\nPWUD: '+kptypecheckbox4+'\nFF: '+kptypecheckbox5+'\nFFX: '+kptypecheckbox7+'\nPWID: '+kptypecheckbox8+'');
+	
+localStorage.setItem('facilityname', facilityname);
 	
 $.get('http://enunua.com/emarps/database/emarps_geodata_app_storedb.php?facilityname='+facilityname+'&partnername'+partnername+'&county='+county+'&kptypecheckbox1='+kptypecheckbox1+'&kptypecheckbox2='+kptypecheckbox2+'&kptypecheckbox3='+kptypecheckbox3+'&kptypecheckbox4='+kptypecheckbox4+'&kptypecheckbox5='+kptypecheckbox5+'&kptypecheckbox7='+kptypecheckbox7+'&kptypecheckbox8='+kptypecheckbox8+'', function(data) {
   	lpush();
@@ -157,9 +160,10 @@ $.get('http://enunua.com/emarps/database/emarps_geodata_app_storedb.php?facility
 <h1>Primary KP Types:</h1>
 <div id="getkptypes"></div>
 
-
-<button id="sendtodb" onclick="sendtodb();">Report to database</button></form>
+<button id="sendtodb" style="margin-top:10px;" onclick="sendtodb();">Report to database</button></form>
 </div>
+
+<div id="geofind">
 
 <button id="geofindbutton" onclick="geoFindMe()"><img align="absmiddle" src="locatemematerialdesign.png" width="40"> Find my location</button>
 
@@ -168,6 +172,8 @@ $.get('http://enunua.com/emarps/database/emarps_geodata_app_storedb.php?facility
 <button id="locateagainbutton" onclick="document.location.reload();" style="display:none">Locate again</button>
 
 <div id="out"></div>
+
+</div>
 
 </body>
 </html>
